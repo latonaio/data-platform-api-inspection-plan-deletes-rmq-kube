@@ -51,7 +51,7 @@ func (c *DPFMAPICaller) deleteSqlProcess(
 	log *logger.Logger,
 ) *dpfm_api_output_formatter.Message {
 	var headerData *dpfm_api_output_formatter.Header
-	itemData := make([]dpfm_api_output_formatter.Item, 0)
+	itemData := make([]dpfm_api_output_formatter.Inspection, 0)
 	for _, a := range accepter {
 		switch a {
 		case "Header":
@@ -73,7 +73,7 @@ func (c *DPFMAPICaller) headerDelete(
 	input *dpfm_api_input_reader.SDC,
 	output *dpfm_api_output_formatter.SDC,
 	log *logger.Logger,
-) (*dpfm_api_output_formatter.Header, *[]dpfm_api_output_formatter.Item) {
+) (*dpfm_api_output_formatter.Header, *[]dpfm_api_output_formatter.Inspection) {
 	sessionID := input.RuntimeSessionID
 	header := c.HeaderRead(input, log)
 	header.InspectionPlan = input.Header.InspectionPlan

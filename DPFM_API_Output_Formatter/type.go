@@ -42,6 +42,7 @@ type HeaderDoc struct {
 	FileName                 *string `json:"FileName"`
 	FilePath                 *string `json:"FilePath"`
 	DocIssuerBusinessPartner *int    `json:"DocIssuerBusinessPartner"`
+	IsMarkedForDeletion      *bool   `json:"IsMarkedForDeletion"`
 }
 
 type ComponentComposition struct {
